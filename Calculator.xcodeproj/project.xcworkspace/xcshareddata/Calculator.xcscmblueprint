@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D6CFEE7EA3A01498573C63AAD570134CEE64D454",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B5BE23CE9B18401A4383475148C73EDD05727027" : 0,
+    "D6CFEE7EA3A01498573C63AAD570134CEE64D454" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AD9EEEF6-85B4-468B-A4C8-3217529FAC60",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B5BE23CE9B18401A4383475148C73EDD05727027" : "",
+    "D6CFEE7EA3A01498573C63AAD570134CEE64D454" : "Calculato-with-Swift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Calculator",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Calculator.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "code.csdn.net:everfire130\/ydpack.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B5BE23CE9B18401A4383475148C73EDD05727027"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/chn-lyzhi\/Calculato-with-Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D6CFEE7EA3A01498573C63AAD570134CEE64D454"
+    }
+  ]
+}

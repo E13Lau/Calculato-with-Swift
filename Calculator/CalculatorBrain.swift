@@ -17,27 +17,47 @@ import Foundation
 
 class CalculatorBrain {
     
-    private enum Op {
+    //Printbacl protocol
+    //Printbacl 已被重命名为 CustomStringConvertible
+    private enum Op : CustomStringConvertible {
         case Operand(Double)
         case UnaryOperation(String, Double -> Double)
         case BinaryOperaion(String, (Double, Double) -> Double)
+        
+        //给类型添加一个 computed property（计算属性）
+        var description: String {
+            get {
+                switch self {
+                case .Operand(let operand):
+                    return "\(operand)"
+                case .UnaryOperation(let symbol, _):
+                    return symbol
+                case .BinaryOperaion(let symbol, _):
+                    return symbol
+                }
+            }
+        }
+        
     }
     
     //() 就是在调用 initializer 方法
-//    var opStack = Array<Op>()
+//    var opStack = Array<Op>() 等价
     private var opStack = [Op]()
     
-//    var konwOps = Dictionary<String, Op>()
+//    var konwOps = Dictionary<String, Op>() 等价
     private var konwOps = [String:Op]()
     
     init() {
+        //函数里面声明函数
+        func learnOp(op: Op) {
+            konwOps[op.description] = op
+        }
         //等价
 //        konwOps[""] = Op.BinaryOperaion("") {$0 * $1}
 //        konwOps["×"] = Op.BinaryOperaion("×", {$0 * $1} )
-        konwOps["×"] = Op.BinaryOperaion("×", * )
-
-        konwOps["÷"] = Op.BinaryOperaion("÷", {$1 / $0} )
-        konwOps["+"] = Op.BinaryOperaion("+", {$0 + $1} )
+        learnOp(Op.BinaryOperaion("×", * ))
+        learnOp(Op.BinaryOperaion("÷", {$1 / $0} ))
+        learnOp(Op.BinaryOperaion("+", {$0 + $1} ))
         konwOps["−"] = Op.BinaryOperaion("−", {$1 - $0} )
         konwOps["√"] = Op.UnaryOperation("√", sqrt)
     }
@@ -78,18 +98,21 @@ class CalculatorBrain {
     func evaluate() -> Double? {
         //可以直接使用 tuble
         let (result, remainder) = evaluate(opStack)
+        print("\(opStack) = \(result) with \(remainder) left over")
         return result
     }
 
-    func pushOperand(operand: Double) {
+    func pushOperand(operand: Double) -> Double? {
         opStack.append(Op.Operand(operand))
+        return evaluate()
     }
     
     //symbol :符号
-    func performOperation(symbol: String) {
+    func performOperation(symbol: String) -> Double? {
         //从字典取值，得到的是一个 Optional，因为有可能是空值
         if let operation = konwOps[symbol] {
             opStack.append(operation)
         }
+        return evaluate()
     }
 }
